@@ -159,6 +159,8 @@ class Adb():
     | adb.cmd('rm','xxxx/xxxx.jpg')                 |  delete xxxx/xxx.jpg,return true/false                    |
     ------------------------------------------------------------------------------------------------------------ 
     | adb.cmd('launch','com.intel.camera22/.Camera')|  launch social camera app,return adb commands             |
+    -------------------------------------------------------------------------------------------------------------
+    | adb shell am start -a android.intent.action.MAIN -n com.intel.camera22/.Camera                            |          |
     ------------------------------------------------------------------------------------------------------------
     '''
     def cmd(self,action,path,t_path=None):
