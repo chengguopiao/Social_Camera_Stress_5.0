@@ -203,7 +203,7 @@ class Adb():
 
 
     def _launchActivity(self,component):
-        p = self._shellcmd('am start -n ' + component)
+        p = self._shellcmd('am start -a android.intent.action.MAIN -n ' + component)
         return p
 
     def _catFile(self,path):
