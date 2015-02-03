@@ -262,11 +262,11 @@ class Adb():
         return subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
     def setUpDevice(self,delAndReFlag=True):
         #Unlock the screen if the screen is locked
-        if d(resourceId = 'com.android.keyguard:id/keyguard_selector_view_frame').wait.exists(timeout = 1000):
-            lockWindowBounds = d(resourceId = 'com.android.keyguard:id/keyguard_selector_view_frame').info.get('bounds')
+        if d(resourceId = 'com.android.systemui:id/lock_icon').wait.exists(timeout = 1000):
+            lockWindowBounds = d(resourceId = 'com.android.systemui:id/lock_icon').info.get('bounds')
             startPoint_x = (lockWindowBounds['right']+lockWindowBounds['left'])/2
             startPoint_y = (lockWindowBounds['bottom']+lockWindowBounds['top'])/2
-            d.swipe(startPoint_x,startPoint_y,lockWindowBounds['right'],startPoint_y)
+            d.swipe(startPoint_x,startPoint_y,startPoint_x,startPoint_y-700)
         if delAndReFlag:
             #Delete all image/video files captured before
             self.cmd('rm','/sdcard/DCIM/*')
