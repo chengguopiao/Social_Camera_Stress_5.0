@@ -267,7 +267,7 @@ class CameraTest(unittest.TestCase):
         #for i in range(200):
         #    tb.captureAndCheckPicCount('single',5)
         #    time.sleep(2)
-        tb.captureAndCheckPicCount('single',5,200)
+        tb.captureAndCheckPicCount('single',5,200,'perfectshot')
 
     # Test case 19
     def testCapturePanoramaImage200TimesBackCamera(self):
@@ -364,7 +364,7 @@ class CameraTest(unittest.TestCase):
         #for i in range(200):
         #    tb.captureAndCheckPicCount('single',5)
         #    time.sleep(1)
-        tb.captureAndCheckPicCount('single',5,200)
+        tb.captureAndCheckPicCount('single',5,200,'burst')
             
     # Test Case 25
     def testCaptureDepthImage500Times(self):
@@ -451,7 +451,7 @@ class CameraTest(unittest.TestCase):
             tb.captureAndCheckPicCount('single',2)
             sm.switchCaptureMode('Burst','Fast')
             time.sleep(2)
-            tb.captureAndCheckPicCount('single',2)
+            tb.captureAndCheckPicCount('single',2,1,'burst' )
 
     # Test Case 31
     def testCaptureDepthImageThenPanoramaImage100Times(self):
@@ -495,7 +495,7 @@ class CameraTest(unittest.TestCase):
         #for i in range(200):
         #    tb.captureAndCheckPicCount('single',5)
         #    time.sleep(2)
-        tb.captureAndCheckPicCount('single',5,200)
+        tb.captureAndCheckPicCount('single',5,200,'burst')
             
     #Add on Sep 18th
     def testCaptureContinuousImage50times(self):
