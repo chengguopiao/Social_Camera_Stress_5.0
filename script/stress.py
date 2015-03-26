@@ -470,7 +470,7 @@ class CameraTest(unittest.TestCase):
     # Test Case 32
     def testCaptureDepthImageThenPerfectshotImage100Times(self):
         """
-        test capture depth image and then capture panorama image 100 times.
+        test capture depth image and then capture perfectshot image 100 times.
         back camera
         """      
         for i in range(100):
@@ -479,7 +479,7 @@ class CameraTest(unittest.TestCase):
             tb.captureAndCheckPicCount('single',2)
             sm.switchCaptureMode('Perfect Shot')
             time.sleep(2)
-            tb.captureAndCheckPicCount('single',6)
+            tb.captureAndCheckPicCount('single',6,1,'perfectshot')
 
     #Add on Sep 18th
     def testcaseBurstImage6M200Times(self):
