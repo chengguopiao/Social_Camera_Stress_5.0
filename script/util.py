@@ -528,7 +528,7 @@ class TouchButton():
                 raise Exception('set '+ mode + ' fail: cmode is '+cmode)
             #'com.intel.camera22_preferences_'+cmodenew+'.xml'
 
-   def captureAndCheckPicCount(self,capturemode,delaytime=0,times=1,currentmode='single'):
+    def captureAndCheckPicCount(self,capturemode,delaytime=0,times=1,currentmode='single'):
         d = { 'single':'jpg', 'video':'mp4', 'smile':'jpg', 'longclick':'jpg'} 
         beforeNo = commands.getoutput('adb shell ls /sdcard/DCIM/*/* | grep '+ d[capturemode] +' | wc -l') #Get count before capturing
         for i in range (0,times):
